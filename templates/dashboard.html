@@ -26,6 +26,25 @@
                     <div class="panel-body">
 
                         <div class="list-group">
+
+                                        <div class="list-group-item">
+
+                                            <i class="fa fa-lightbulb-o fa-fw"></i>{{ response_form.title.label }}
+                                            <span class="pull-right text-muted small"><em>{{ response_form.title.errors }}</em></span>
+
+                                            <div class="form-field-body">
+                                                <!-- append to an attribute -->
+                                                {% render_field response_form.title class+="form-control" placeholder="The Claim-o-Matic" %}
+
+{#                                                <!-- template variables can be used as attribute values -->#}
+{#                                                {% render_field form.text placeholder=form.text.label %}#}
+{#                                                {{ response_form.title|attr:'class:form-control' }}#}
+                                            </div>
+
+                                        </div>
+
+
+
                             {% for category in categories %}
                                 {% for field in response_form %}
                                     {% if field.field.widget.attrs.category == category %}
@@ -35,7 +54,7 @@
                                             <span class="pull-right text-muted small"><em>{{ field.errors }}</em></span>
 
                                             <div class="form-field-body">
-                                                {{ field|attr:'class:form-control rows="2"' }}
+                                                {{ field|attr:'class:form-control rows="2"'}}
                                             </div>
 
                                         </div>
@@ -56,17 +75,17 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-bar-chart-o fa-fw"></i> Draw Stuff
-                        <span class="pull-right text-muted small"><em>Whatever</em></span>
+                        <i class="fa fa-pencil fa-fw"></i> Concept Sketch
+                        <span class="pull-right text-muted small"><em>Add some visuals if you'd like</em></span>
 
                     </div>
 
                     <!-- /.panel-heading -->
                     <div class="panel-body">
 
-                        <div class="well">
+{#                        <div class="well">#}
                             <div class="my-drawing"></div>
-                        </div>
+{#                        </div>#}
 
 <span id = "literallysuccess" class="pull-left"></span>
 <div class="literallysubmit pull-right">
@@ -81,15 +100,15 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-bar-chart-o fa-fw"></i> Upload Files
-                        <span class="pull-right text-muted small"><em>Whatever</em></span>
+                        <i class="fa fa-newspaper-o fa-fw"></i> Supplemental Docs
+                        <span class="pull-right text-muted small"><em>If you have any docs,drop them here</em></span>
 
                     </div>
                     <div class="panel-body">
                             <div id="dZUpload" class="dropzone dz-clickable">
 
                                 <div class="dz-default dz-message "><div class="fa fa-upload"></div></div>
-                                <h3 class="text-center">Drop Files Here</h3>
+                                <h3 class="text-center">Images, supporting data, workflow diagrams, etc. </h3>
                             </div>
                 </div>
                 </div>
@@ -409,11 +428,11 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
+                            <i class="fa fa-copy fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>Submitted</div>
+                            <div class="huge">{{ data.count }}</div>
+                            <div>Your Submissions</div>
                         </div>
                     </div>
                 </div>
@@ -421,19 +440,18 @@
                     <div class="panel-footer">
 
 
-                        <div class="collapse-header">
-                            <span class="pull-left">View Details</span>
+                        <div class="collapse-header btn btn-default btn-block">
+                            <span class="pull-left">View Ideas</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
                         <div class="collapse-content" style="display:none;">
 
                         <div class="list-group">
-                            {% for category in categories %}
-{#                                {% for field in response_form %}#}
-{#                                    {% if field.field.widget.attrs.category == category %}#}
+                            {% for d in data %}
+
                                         <div class="list-group-item" value="{% counter %}">
-                                            <i class="fa fa-check-square fa-fw"><a href="#">Test</a></i>
+                                            <i class="fa fa-check-square fa-fw"></i><a href="/response/{{ d.id }}"><i>{{ d.title }}<span class="pull-right">{{ d.created|date:"M d" }}</span></i></a>
 
 {#                                            <span class="pull-right text-muted small"><em>{{ field.errors }}</em></span>#}
 
@@ -443,8 +461,7 @@
 {#                                            </div>#}
 
                                         </div>
-{#                                    {% endif %}#}
-{#                                {% endfor %}#}
+
                             {% endfor %}
 
                         </div>
@@ -483,8 +500,8 @@
 
                       <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-bar-chart-o fa-fw"></i> Stats
-                        <span class="pull-right text-muted small"><em>Whatever</em></span>
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Stats - Coming Soon
+{#                        <span class="pull-right text-muted small"><em>Whatever</em></span>#}
 
                     </div>
                     <div class="panel-body">
@@ -498,7 +515,7 @@
             <!-- /.panel -->
             <div class="chat-panel panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-comments fa-fw"></i> Chat
+                    <i class="fa fa-comments fa-fw"></i> Chat - Coming Soon
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-chevron-down"></i>
@@ -716,14 +733,16 @@
                 {#         $('.literallysubmit').html('Uploading...')#}
                 // this is all bog standard Imgur API; only LC-specific thing is the
                 // image data argument
+                var data=lc.canvasForExport().toDataURL().split(',')[1]
+
                 $.ajax({
                     url: '/post_files/',
                     type: 'POST',
-                    headers: {
-                        'CSRFToken': $('meta[name="token"]').attr('content')
-                    },
+{#                    headers: {#}
+{#                        'CSRFToken': $('meta[name="token"]').attr('content')#}
+{#                    },#}
                     data: {
-                        image: lc.canvasForExport().toDataURL().split(',')[1],
+                        image: data,
                         type: 'base64'
                     },
                     success: function (data) {

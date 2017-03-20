@@ -8,7 +8,7 @@ import datetime
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from survey.models import Question, Survey, Category, FileUpload
+from survey.models import Question, Survey, Category, FileUpload,Response,AnswerBase
 from survey.forms import ResponseForm
 
 from django.http import HttpResponse
@@ -36,8 +36,11 @@ def post_files(request):
         file=request.FILES['file[0]']
 
     elif len(request.POST) !=0:
-        num=len(request.session['images'])
-        file=decode64(request.POST['image'],num)
+        try:
+            num=len(request.session['images'])
+        except:
+            num=1
+        file=decode64(request.POST['image'],str(num))
 
     newdoc = FileUpload(docFile = file)
     newdoc.save();
@@ -62,7 +65,13 @@ def Index(request):
 def Maps(request):
     return render(request, 'maps.html')
 
+def ResponseDetail(request, id):
+    response = Response.objects.get(id=id)
+    answer = AnswerBase.objects.filter(response=response)
+    return render(request, 'response.html', {'response': response, 'answer': answer})
+
 def SurveyDetail(request, id):
+    survey = Survey.objects.get(id=id)
     survey = Survey.objects.get(id=id)
     category_items = Category.objects.filter(survey=survey)
     categories = [c.name for c in category_items]
@@ -120,5 +129,9 @@ def dashboard(request):
             response = form.save(json.dumps(filelist), request.user, commit=False)
             return HttpResponseRedirect("/confirm/%s" % response.interview_uuid)
 
+    rlist=Response.objects.filter(author_id=request.user)
+    # object_list = IgaiaContent.objects.filter(user=request.user)
+    # return render_to_response('object_list_template.html', {'object_list': object_list})
+
     # TODO sort by category
-    return render(request, 'dashboard.html', {'response_form': form, 'survey': survey, 'categories': categories})
+    return render(request, 'dashboard.html', {'response_form': form, 'survey': survey, 'categories': categories,'data':rlist})

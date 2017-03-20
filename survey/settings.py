@@ -130,6 +130,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'polymorphic',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -176,3 +177,4 @@ LOGGING = {
 
 # AUTH_USER_MODEL = values.Value('account.User')
 # CUSTOM_AUTH_USER_MODEL_DB = values.Value('')
+SESSION_SAVE_EVERY_REQUEST=True

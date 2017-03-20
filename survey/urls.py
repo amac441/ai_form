@@ -12,6 +12,8 @@ urlpatterns = patterns('',
                        # Examples:
                        url(r'^$', 'survey.views.Index', name='home'),
                        url(r'^survey/(?P<id>\d+)/$', 'survey.views.SurveyDetail', name='survey_detail'),
+                       url(r'^response/(?P<id>\d+)/$', 'survey.views.ResponseDetail', name='response_detail'),
+
                        url(r'^confirm/(?P<uuid>\w+)/$', 'survey.views.Confirm', name='confirmation'),
                        url(r'^privacy/$', 'survey.views.privacy', name='privacy_statement'),
                        url(r'^dashboard/$', 'survey.views.dashboard', name='dashboard'),

@@ -1,0 +1,9 @@
+https://github.com/RTIInternational/call-for-service/blob/master/docs/src/development.md
+
+http://www.dreisbach.us/blog/building-dashboards-with-django-and-d3/
+
+python manage.py runserver_plus --settings=cfs.settings.local
+
+https://publicsafetydataportal.org/computer-aided-dispatch-data/
+
+python manage.py load_call_csv DPD__911_Calls_for_Service.csv --settings=cfs.settings.local

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div id="intro">
+<h1>Thanks for your submission</h1>
+
+<div class="lead">
+
+
+{{ response.title }}
+
+
+</div>
+
+
+<div class="lead">
+
+{% for a in answer %}
+    {{ a.question.text }}
+    {{ a.question.body }}
+
+    {#    Get chile elements#}
+{#    http://stackoverflow.com/questions/929029/how-do-i-access-the-child-classes-of-an-object-in-django-without-knowing-the-nam#}
+    {% endfor %}
+
+</div>
+
+<div class="lead">
+	<a href="/dashboard">Take another survey</a>
+</div>
+</div>
+
+{% endblock %}

@@ -6,11 +6,11 @@ from django.contrib.auth.models import User
 class QuestionInline(admin.TabularInline):
 	model = Question
 	ordering = ('category',)
-	extra = 0
+	#extra = 0
 
 class CategoryInline(admin.TabularInline):
 	model = Category
-	extra = 0
+	#extra = 0
 
 class SurveyAdmin(admin.ModelAdmin):
 	inlines = [CategoryInline, QuestionInline]
@@ -18,7 +18,7 @@ class SurveyAdmin(admin.ModelAdmin):
 class AnswerBaseInline(admin.StackedInline):
 	fields = ('question', 'body')
 	readonly_fields = ('question',)
-	extra = 0
+	#extra = 0
 
 class AnswerTextInline(AnswerBaseInline):
 	model= AnswerText  
@@ -36,7 +36,7 @@ class AnswerIntegerInline(AnswerBaseInline):
 	model= AnswerInteger 
 
 class ResponseAdmin(admin.ModelAdmin):
-	list_display = ('interview_uuid', 'interviewer', 'created') 
+	list_display = ('interview_uuid', 'title', 'created')
 	inlines = [AnswerTextInline, AnswerRadioInline, AnswerSelectInline, AnswerSelectMultipleInline, AnswerIntegerInline]
 	# specifies the order as well as which fields to act on 
 	readonly_fields = ('survey', 'created', 'updated', 'interview_uuid')

@@ -18,7 +18,8 @@ class HorizontalRadioRenderer(forms.RadioSelect.renderer):
 class ResponseForm(models.ModelForm):
     class Meta:
         model = Response
-        fields = ('interviewer', 'interviewee', 'conditions', 'comments','filelist')
+        # fields = ('interviewer', 'interviewee', 'conditions', 'comments','filelist')
+        fields = ('title','filelist')
 
     # def is_valid(self):
     #     a=self.errors
@@ -36,8 +37,13 @@ class ResponseForm(models.ModelForm):
         data = kwargs.get('data')
         for q in survey.questions():
             if q.question_type == Question.TEXT:
+                question_choices = q.get_choices()
+                newq=[]
+                for ques in question_choices:
+                    newq.append(ques[0])
+                question_choices=", ".join(newq)
                 self.fields["question_%d" % q.pk] = forms.CharField(label=q.text,
-                                                                    widget=forms.Textarea)
+                                                                    widget=forms.Textarea(attrs={'placeholder': question_choices}))
             elif q.question_type == Question.RADIO:
                 question_choices = q.get_choices()
                 self.fields["question_%d" % q.pk] = forms.ChoiceField(label=q.text,
