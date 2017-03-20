@@ -119,7 +119,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'survey.urls'
-# LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_REDIRECT_URL = '/dashboard'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'survey.wsgi.application'
