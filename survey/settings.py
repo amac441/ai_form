@@ -31,7 +31,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'andyai$forms',                      # Or path to database file if using sqlite3.
+            'NAME': 'andyai$survey',                      # Or path to database file if using sqlite3.
             'USER': 'andyai',                      # Not used with sqlite3.
             'PASSWORD': 'gogogo123',                  # Not used with sqlite3.
             'HOST': 'andyai.mysql.pythonanywhere-services.com'                      # Set to empty string for localhost. Not used with sqlite3.
