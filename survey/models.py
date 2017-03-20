@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.contrib.auth.models import User
+from django.conf import settings
 import os
 
 
@@ -90,7 +90,7 @@ class Response(models.Model):
     conditions = models.TextField('Conditions during interview', blank=True, null=True)
     comments = models.TextField('Any additional Comments', blank=True, null=True)
     interview_uuid = models.CharField("Interview unique identifier", max_length=36)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     filelist = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
