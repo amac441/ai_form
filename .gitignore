@@ -5,7 +5,5 @@ media/data
 *.swn
 *.pyc
 local_settings.py
-survey.db
-
 
 venv/*

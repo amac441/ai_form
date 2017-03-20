@@ -173,3 +173,6 @@ LOGGING = {
         },
     }
 }
+
+AUTH_USER_MODEL = values.Value('account.User')
+CUSTOM_AUTH_USER_MODEL_DB = values.Value('')
