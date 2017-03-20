@@ -68,11 +68,11 @@
                             <div class="my-drawing"></div>
                         </div>
 
+<span id = "literallysuccess" class="pull-left"></span>
 <div class="literallysubmit pull-right">
+
     <div class="btn btn-primary" id="literallybutton" value="Save Drawing">Save Drawing</div>
 </div>
-
-
 
                     </div>
 
@@ -728,6 +728,11 @@
                     },
                     success: function (data) {
                         lc.clear();
+                        var span = document.getElementById('literallysuccess');
+                        while( span.firstChild ) {
+                            span.removeChild( span.firstChild );
+                        }
+                        span.appendChild( document.createTextNode("Saved Successfully") );
                     }
 
                 });
