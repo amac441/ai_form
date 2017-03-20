@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load survey_extras %}
+
+{% block body %}
+
+<h1>Welcome to the {{survey.name|title}}</h1>
+<div class="survey-description">
+	{{survey.description|safe}}
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+	<form action="/survey/{{survey.id}}/" method="post">{% csrf_token %}
+
+	<!--
+		<h3 class="collapsible" id="response_metadata">Response Metadata<span></span></h3>
+		<div class="category-container">
+
+		<div class="field-wrapper question-required">
+			{{ response_form.interviewer.errors }}
+			<span class="asterix"> * </span>{{ response_form.interviewer.label_tag }}
+			<span class="form-help-text">{{ response_form.interviewer.help_text}}</span>
+			<div class="form-field-body">
+				{{ response_form.interviewer }}
+			</div>
+		</div>
+
+		<div class="field-wrapper question-required">
+			{{ response_form.interviewee.errors }}
+			<span class="asterix"> * </span>{{ response_form.interviewee.label_tag }}
+			<span class="form-help-text">{{ response_form.interviewee.help_text}}</span>
+			<div class="form-field-body">
+				{{ response_form.interviewee }}
+			</div>
+		</div>
+
+		<div class="field-wrapper">
+			{{ response_form.conditions.errors }}
+			{{ response_form.conditions.label_tag }}
+			<span class="form-help-text">{{ response_form.conditions.help_text}}</span>
+			<div class="form-field-body">
+				{{ response_form.conditions }}
+			</div>
+		</div>
+
+		<div class="field-wrapper">
+			{{ response_form.comments.errors }}
+			{{ response_form.comments.label_tag }}
+			<span class="form-help-text">{{ response_form.comments.help_text}}</span>
+			<div class="form-field-body">
+				{{ response_form.comments }}
+			</div>
+		</div>
+	</div>
+	-->
+
+		<ol class="survey-questions">
+		{% for category in categories %}
+			<h3 class="collapsible" id="questions">{{category|title}} Questions<span></span></h3>
+			<div class="category-container">
+			{% for field in response_form %}
+				{% if field.field.widget.attrs.category == category %}
+					<li class="q-item" value="{% counter %}">
+					{% if field.field.required %}
+					<div class="field-wrapper question-required">
+						{{ field.errors }}
+						<span class="asterix"> * </span><label class="label-inline">{{ field.label }}</label>
+					{% else %}
+					<div class="field-wrapper">
+						{{ field.errors }}
+						<label class="label-inline">{{ field.label }}</label>
+					{% endif %}
+						<span class="form-help-text">{{ field.help_text}}</span>
+						<div class="form-field-body">
+							{{ field }}
+						</div>
+					</div>
+					</li>
+				{% endif %}
+			{% endfor %}
+			</div>
+		{% endfor %}
+		</ol>
+
+
+        <h3 class="collapsible" id="drawing">{{category|title}} Drawing<span></span></h3>
+			<div class="category-container">
+
+            <div class="my-drawing"></div>
+
+
+            <div id="dZUpload" class="dropzone dz-clickable">
+                  <div class="dz-default dz-message">Drop Files Here</div>
+            </div>
+
+		<div class="submit-button"><input type="submit" class="btn btn-primary" value="Bombs Away!"></div>
+	</form>
+</div>
+
+<div class="col-md-4">
+
+<div id="piechart" style="width: 100%; height: 500px;"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+{% endblock %}
+
+{% block extrajs %}
+	<script src="/media/js/jquery.collapsible.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//collapsible management
+			$('.collapsible').collapsible({defaultOpen: 'questions'});
+		});
+	</script>
+
+    <script>
+    $(document).ready(function () {
+        Dropzone.autoDiscover = false;
+        $("#dZUpload").dropzone({
+            url: "hn_SimpeFileUploader.ashx",
+            addRemoveLinks: true,
+            success: function (file, response) {
+                var imgName = response;
+                file.previewElement.classList.add("dz-success");
+                console.log("Successfully uploaded :" + imgName);
+            },
+            error: function (file, response) {
+                file.previewElement.classList.add("dz-error");
+            }
+        });
+    });
+    </script>
+
+    <!-- kick off literallydraw -->
+    <script>
+        LC.init(
+            document.getElementsByClassName('my-drawing')[0],
+            {imageURLPrefix: '/media/literallycanvas/img'}
+        );
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+{% endblock %}

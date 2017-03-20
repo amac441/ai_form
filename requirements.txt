@@ -1,0 +1,4 @@
+Django==1.8.5
+django-tastypie # API
+django-registration # account logic, views and workflows
+
