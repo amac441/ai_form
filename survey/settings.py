@@ -16,7 +16,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-if LOCAL==False:
+if LOCAL==True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
