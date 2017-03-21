@@ -87,8 +87,10 @@ class ResponseForm(models.ModelForm):
             if data:
                 self.fields["question_%d" % q.pk].initial = data.get('question_%d' % q.pk)
 
-    def save(self, files,user,commit=True):
+    def save(self, files,user,id,commit=True):
         # save the response object
+        if id!='':
+            Response.objects.filter(id=id).delete()
         response = super(ResponseForm, self).save(commit=False)
         response.survey = self.survey
         response.interview_uuid = self.uuid

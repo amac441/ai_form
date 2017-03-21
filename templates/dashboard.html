@@ -3,10 +3,19 @@
 {% load i18n widget_tweaks %}
 {% block body %}
 
+
+
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header">Welcome, {{ user.username }}</h3>
-        <small class="text-muted small"><i>{{survey.description|safe}}</i></small>
+            <h3 class="page-header">Welcome, {{ user.username|title }}</h3>
+            <div class="text-muted small alert alert-info">
+                <i>{{ survey.description|safe }}</i></div>
+
+            {% if success %}
+                <div class="alert alert-danger">
+                    {{ success|safe }}
+                </div>
+            {% endif %}
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -15,7 +24,7 @@
     <span class="row">
         <div class="col-lg-8">
 {#            http://stackoverflow.com/questions/20727029/django-dropzone-js-form-validation-fails-for-multiple-files   #}
-            <form class="form" action="/dashboard/" method="post" enctype="multipart/form-data">
+            <form class="form" action="{{ request.path }}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <div class="panel panel-default">
@@ -74,30 +83,30 @@
                 </div>
                 <!-- /.panel -->
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fa fa-pencil fa-fw"></i> Concept Sketch
-                        <span class="pull-right text-muted small"><em>Add some visuals if you'd like</em></span>
-
-                    </div>
-
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-
+{#                <div class="panel panel-default">#}
+{#                    <div class="panel-heading">#}
+{#                        <i class="fa fa-pencil fa-fw"></i> Concept Sketch#}
+{#                        <span class="pull-right text-muted small"><em>Add some visuals if you'd like</em></span>#}
+{##}
+{#                    </div>#}
+{##}
+{#                    <!-- /.panel-heading -->#}
+{#                    <div class="panel-body">#}
+{##}
 {#                        <div class="well">#}
-                            <div class="my-drawing"></div>
+{#                            <div class="my-drawing"></div>#}
 {#                        </div>#}
-
-<span id = "literallysuccess" class="pull-left"></span>
-<div class="literallysubmit pull-right">
-
-    <div class="btn btn-primary" id="literallybutton" value="Save Drawing">Save Drawing</div>
-</div>
-
-                    </div>
-
-                </div>
-                <!-- /.drawing -->
+{##}
+{#<span id = "literallysuccess" class="pull-left"></span>#}
+{#<div class="literallysubmit pull-right">#}
+{##}
+{#    <div class="btn btn-primary" id="literallybutton" value="Save Drawing">Save Drawing</div>#}
+{#</div>#}
+{##}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#                <!-- /.drawing -->#}
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -115,7 +124,19 @@
                 </div>
                 <!-- /.upload -->
 
-                <input type="submit" class="submit-all btn btn-block btn-danger" value="Bombs Away!">
+            <div class="btn-toolbar btn-block" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2 btn-block" role="group" aria-label="First group">
+                <input type="submit" name="draft" class="submit-all btn btn-block btn-default" value="Save Draft">
+
+  </div>
+  <div class="btn-group mr-2 btn-block" role="group" aria-label="Second group">
+                <input type="submit" name="save" class="submit-all btn btn-block btn-danger" value="Bombs Away!">
+  </div>
+
+</div>
+
+
+
 
 
             </form>
@@ -451,9 +472,11 @@
                         <div class="list-group">
                             {% for d in data %}
 
-                                        <div class="list-group-item" value="{% counter %}">
-{#                                        /response/{{ d.id }}#}
-                                            <i class="fa fa-check-square fa-fw"></i><a href="#"><i>{{ d.title }}<span class="pull-right">{{ d.created|date:"M d" }}</span></i></a>
+                                <div class="list-group-item" value="{% counter %}">
+{#                                        /dashboard/{{ d.id }}#}
+                                            <i class="fa fa-check-square fa-fw"></i><a
+                                        href="/dashboard/{{ d.id }}"><i>{{ d.title }}<span
+                                        class="pull-right">{{ d.created|date:"M d" }}</span></i></a>
 
 {#                                            <span class="pull-right text-muted small"><em>{{ field.errors }}</em></span>#}
 
@@ -735,14 +758,14 @@
                 {#         $('.literallysubmit').html('Uploading...')#}
                 // this is all bog standard Imgur API; only LC-specific thing is the
                 // image data argument
-                var data=lc.canvasForExport().toDataURL().split(',')[1]
+                var data = lc.canvasForExport().toDataURL().split(',')[1]
 
                 $.ajax({
                     url: '/post_files/',
                     type: 'POST',
-{#                    headers: {#}
-{#                        'CSRFToken': $('meta[name="token"]').attr('content')#}
-{#                    },#}
+                    {#                    headers: {#}
+                    {#                        'CSRFToken': $('meta[name="token"]').attr('content')#}
+                    {#                    },#}
                     data: {
                         image: data,
                         type: 'base64'
@@ -750,10 +773,10 @@
                     success: function (data) {
                         lc.clear();
                         var span = document.getElementById('literallysuccess');
-                        while( span.firstChild ) {
-                            span.removeChild( span.firstChild );
+                        while (span.firstChild) {
+                            span.removeChild(span.firstChild);
                         }
-                        span.appendChild( document.createTextNode("Saved Successfully") );
+                        span.appendChild(document.createTextNode("Saved Successfully"));
                     }
 
                 });
@@ -800,13 +823,12 @@
                 //execute this after slideToggle is done
                 //change text of header based on visibility of content div
                 if ($content.is(":hidden")) {
-                                    var data=$(this).parent().find(".fa-arrow-circle-down")
+                    var data = $(this).parent().find(".fa-arrow-circle-down")
                     data.removeClass("fa-arrow-circle-down").addClass("fa-arrow-circle-right");
-{#                document.getElementsByClassName("fa-arrow-circle-down")[0].removeClass("fa-arrow-circle-down").addClass("fa-arrow-circle-right");#}
-                    }
-                else
-                {
-                                    var data=$(this).parent().find(".fa-arrow-circle-right")
+                    {#                document.getElementsByClassName("fa-arrow-circle-down")[0].removeClass("fa-arrow-circle-down").addClass("fa-arrow-circle-right");#}
+                }
+                else {
+                    var data = $(this).parent().find(".fa-arrow-circle-right")
                     data.removeClass("fa-arrow-circle-right").addClass("fa-arrow-circle-down");
 
                 }
