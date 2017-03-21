@@ -42,8 +42,11 @@ class ResponseForm(models.ModelForm):
                 for ques in question_choices:
                     newq.append(ques[0])
                 question_choices=", ".join(newq)
+                qc=question_choices.split("\r\n\r\nExample:",1)
+                example="Example:"+qc[1]
                 self.fields["question_%d" % q.pk] = forms.CharField(label=q.text,
-                                                                    widget=forms.Textarea(attrs={'placeholder': question_choices}))
+                                                                    help_text=qc[0],
+                                                                    widget=forms.Textarea(attrs={'placeholder': example}))
             elif q.question_type == Question.RADIO:
                 question_choices = q.get_choices()
                 self.fields["question_%d" % q.pk] = forms.ChoiceField(label=q.text,

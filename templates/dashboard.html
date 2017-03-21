@@ -61,7 +61,11 @@
                                         <div class="list-group-item" value="{% counter %}">
 
                                             <i class="fa fa-comment fa-fw"></i>{{ field.label }}
-                                            <span class="pull-right text-muted small"><em>{{ field.errors }}</em></span>
+
+{#                                            {% with field.question_choices|split:"\n\r\nExample:" as screens %}#}
+{#                                            {{ screens.1 }}#}
+
+                                            <div class="text-muted small"><em>{{ field.help_text|safe }}</em></div>
 
                                             <div class="form-field-body">
                                                 {{ field|attr:'class:form-control rows="2"'}}
