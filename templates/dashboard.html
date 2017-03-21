@@ -452,7 +452,8 @@
                             {% for d in data %}
 
                                         <div class="list-group-item" value="{% counter %}">
-                                            <i class="fa fa-check-square fa-fw"></i><a href="/response/{{ d.id }}"><i>{{ d.title }}<span class="pull-right">{{ d.created|date:"M d" }}</span></i></a>
+{#                                        /response/{{ d.id }}#}
+                                            <i class="fa fa-check-square fa-fw"></i><a href="#"><i>{{ d.title }}<span class="pull-right">{{ d.created|date:"M d" }}</span></i></a>
 
 {#                                            <span class="pull-right text-muted small"><em>{{ field.errors }}</em></span>#}
 
