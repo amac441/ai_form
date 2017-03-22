@@ -125,13 +125,13 @@ def dashboard(request, id=''):
         #form = FileUploadForm(request.POST, request.FILES)
         #http://stackoverflow.com/questions/1110153/what-is-the-most-efficent-way-to-store-a-list-in-the-django-models
 
-        # if request.action==??:
-        #     form.fields['draft']=="Y"
-        # responsedata="Your Draft has been successfully saved! Access by viewing your Submissions"
+        if "draft" in request.POST:
+            draft=True
+            responsedata="Your Draft has been successfully saved! Access by viewing your Submissions"
 
-        # else:
-        #     form.fields['draft']=="N"
-        # responsedata="Your Idea has been successfully submitted!"
+        else:
+            draft=False
+        responsedata="Your Idea has been successfully submitted!"
 
 
         try:
@@ -142,7 +142,7 @@ def dashboard(request, id=''):
         # survey.filelist=json.dumps(filelist) #survey is model
         form = ResponseForm(request.POST, survey=survey)
         if form.is_valid():
-            response = form.save(json.dumps(filelist), request.user, id, commit=False)
+            response = form.save(json.dumps(filelist), request.user, id, draft, commit=False)
             #return HttpResponseRedirect("/confirm/%s" % response.interview_uuid)
 
     #populate form with initial data

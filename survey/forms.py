@@ -90,7 +90,7 @@ class ResponseForm(models.ModelForm):
             if data:
                 self.fields["question_%d" % q.pk].initial = data.get('question_%d' % q.pk)
 
-    def save(self, files,user,id,commit=True):
+    def save(self, files,user,id,draft,commit=True):
         # save the response object
         if id!='':
             Response.objects.filter(id=id).delete()
@@ -99,6 +99,7 @@ class ResponseForm(models.ModelForm):
         response.interview_uuid = self.uuid
         response.filelist = files
         response.author = user
+        response.draft=draft
         response.save()
 
         # create an answer object for each question and associate it with this

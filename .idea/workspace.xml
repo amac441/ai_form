@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey.db" afterPath="$PROJECT_DIR$/survey.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/forms.py" afterPath="$PROJECT_DIR$/survey/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/models.py" afterPath="$PROJECT_DIR$/survey/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/settings.py" afterPath="$PROJECT_DIR$/survey/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/urls.py" afterPath="$PROJECT_DIR$/survey/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/views.py" afterPath="$PROJECT_DIR$/survey/views.py" />
@@ -26,7 +27,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.59718555">
+    <splitter split-orientation="horizontal" split-proportion="0.49076518">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
@@ -42,8 +43,8 @@
           <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+                <state relative-caret-position="114">
+                  <caret line="132" column="42" lean-forward="false" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="42" />
                   <folding>
                     <marker date="1490129751716" expanded="false" signature="6057:24222" ph="..." />
                   </folding>
@@ -54,8 +55,8 @@
           <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/survey/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="157">
-                  <caret line="47" column="84" lean-forward="false" selection-start-line="47" selection-start-column="84" selection-end-line="47" selection-end-column="84" />
+                <state relative-caret-position="89">
+                  <caret line="92" column="39" lean-forward="false" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
                   <folding>
                     <element signature="e#0#24#0" expanded="true" />
                   </folding>
@@ -76,8 +77,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/survey/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="251">
-                  <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+                <state relative-caret-position="200">
+                  <caret line="132" column="23" lean-forward="false" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#35#0" expanded="true" />
                   </folding>
@@ -143,11 +144,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/survey/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+                <state relative-caret-position="357">
+                  <caret line="94" column="42" lean-forward="false" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#28#0" expanded="true" />
                   </folding>
@@ -175,7 +176,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/survey/settings.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="204">
@@ -199,8 +200,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
-      <find>save dr</find>
       <find>auth_user</find>
       <find>field</find>
       <find>csrf</find>
@@ -227,6 +226,8 @@
       <find>/dash</find>
       <find>button</find>
       <find>btn-danger</find>
+      <find>contect</find>
+      <find>helper</find>
       <find>placeholder</find>
       <find>you are in</find>
     </findStrings>
@@ -250,15 +251,15 @@
         <option value="$PROJECT_DIR$/media/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/media/css/dropzone.css" />
         <option value="$PROJECT_DIR$/survey/admin.py" />
-        <option value="$PROJECT_DIR$/survey/models.py" />
         <option value="$PROJECT_DIR$/templates/confirm.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/response.html" />
         <option value="$PROJECT_DIR$/survey/urls.py" />
         <option value="$PROJECT_DIR$/survey/settings.py" />
-        <option value="$PROJECT_DIR$/survey/views.py" />
-        <option value="$PROJECT_DIR$/survey/forms.py" />
         <option value="$PROJECT_DIR$/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/survey/forms.py" />
+        <option value="$PROJECT_DIR$/survey/views.py" />
+        <option value="$PROJECT_DIR$/survey/models.py" />
       </list>
     </option>
   </component>
@@ -1122,16 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/survey/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="84" column="11" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/survey/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1150,18 +1141,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/survey/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="47" column="84" lean-forward="false" selection-start-line="47" selection-start-column="84" selection-end-line="47" selection-end-column="84" />
+        <state relative-caret-position="89">
+          <caret line="92" column="39" lean-forward="false" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/survey/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="84" column="11" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/survey/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="132" column="23" lean-forward="false" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -1170,8 +1171,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+        <state relative-caret-position="114">
+          <caret line="132" column="42" lean-forward="false" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="42" />
           <folding>
             <marker date="1490129751716" expanded="false" signature="6057:24222" ph="..." />
           </folding>

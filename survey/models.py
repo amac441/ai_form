@@ -92,6 +92,7 @@ class Response(models.Model):
     interview_uuid = models.CharField("Interview unique identifier", max_length=36)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     filelist = models.TextField(blank=True, null=True)
+    draft = models.BooleanField(blank=True)
 
     def __unicode__(self):
         return ("response %s" % self.interview_uuid)
