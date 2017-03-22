@@ -2,7 +2,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.conf import settings
 import os
-
+from django.contrib.auth.models import User
 
 class Survey(models.Model):
     name = models.CharField(max_length=400)
@@ -97,6 +97,8 @@ class Response(models.Model):
     def __unicode__(self):
         return ("response %s" % self.interview_uuid)
 
+    def __str__(self):
+       return self.title + "-" + self.author.username
 
 # class UploadFile(models.Model):
 #     file = models.FileField(upload_to='files/%Y/%m')
@@ -138,3 +140,18 @@ class FileUpload(models.Model):
     @property
     def filename(self):
         return os.path.basename(self.docFile.name)
+
+class Comment(models.Model):
+    response = models.ForeignKey(Response, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_date = models.DateTimeField(auto_now=True)
+    #writer = models.ForeignKey(User,blank=True, null=True)
+    #approved_comment = models.BooleanField(default=False)
+
+    # def approve(self):
+        #     self.approved_comment = True
+    #     self.save()
+
+    def __str__(self):
+        return self.text

@@ -9,7 +9,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
 from survey.models import Question, Survey, Category, FileUpload,Response,AnswerBase
-from survey.forms import ResponseForm
+from survey.forms import ResponseForm,CommentForm
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -112,7 +112,6 @@ import json
 @login_required(login_url='/login/')
 def dashboard(request, id=''):
 
-
     survey = Survey.objects.get(id=1)
     category_items = Category.objects.filter(survey=survey)
     categories = [c.name for c in category_items]
@@ -127,12 +126,11 @@ def dashboard(request, id=''):
 
         if "draft" in request.POST:
             draft=True
-            responsedata="Your Draft has been successfully saved! Access by viewing your Submissions"
+            drafttext='draft'
 
         else:
             draft=False
-        responsedata="Your Idea has been successfully submitted!"
-
+            drafttext='success'
 
         try:
             filelist=request.session['images']
@@ -144,21 +142,32 @@ def dashboard(request, id=''):
         if form.is_valid():
             response = form.save(json.dumps(filelist), request.user, id, draft, commit=False)
             #return HttpResponseRedirect("/confirm/%s" % response.interview_uuid)
-
+            return HttpResponseRedirect('/dashboard/'+drafttext)
     #populate form with initial data
     elif id!='':
-        response = Response.objects.get(id=id)
-        if request.user==response.author:
 
-            initialdata['title']=response.title
-            answer = AnswerBase.objects.filter(response=response)
-            c=answer[0].question.text
-            for an in answer:
-                i=an.question.id
-                key="question_"+str(i)
-                qtext=an.question.text
-                initialdata[key]=an.answertext.body
-                responsedata="<strong>Note:</strong> You are in edit mode"
+        if id == "draft":
+            responsedata="Your Draft has been successfully saved! Access by viewing your Submissions"
+
+        elif id == "success":
+            responsedata="Your Idea has been successfully submitted!"
+
+        else:
+            try:
+                response = Response.objects.get(id=int(id))
+                if request.user==response.author:
+
+                    initialdata['title']=response.title
+                    answer = AnswerBase.objects.filter(response=response)
+                    c=answer[0].question.text
+                    for an in answer:
+                        i=an.question.id
+                        key="question_"+str(i)
+                        qtext=an.question.text
+                        initialdata[key]=an.answertext.body
+                        responsedata="<strong>Note:</strong> You are in edit mode"
+            except:
+                pass
     # print(form)
 
     form = ResponseForm(initialdata,survey=survey)
@@ -169,3 +178,20 @@ def dashboard(request, id=''):
 
     # TODO sort by category
     return render(request, 'dashboard.html', {'response_form': form, 'survey': survey, 'categories': categories,'data':rlist,'success':responsedata})
+
+def save_note(request, space_name):
+
+    """
+    Saves the note content and position within the table.
+    """
+    # place = get_object_or_404(Space, url=space_name)
+    note_form = CommentForm(request.POST or None)
+
+    if request.method == "POST" and request.is_ajax:
+        msg = "The operation has been received correctly."
+        print request.POST
+
+    else:
+        msg = "GET petitions are not allowed for this view."
+
+    return HttpResponse(msg)

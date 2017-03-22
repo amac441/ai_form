@@ -5245,6 +5245,38 @@ a.thumbnail.active {
   padding-left: 0;
   margin-bottom: 20px;
 }
+
+.red-circle{
+    display: block;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+
+    background-color:darkslategrey;
+    color: white;
+    text-align: center;
+    font-size: .8em;
+}
+
+.blue-circle{
+    display: block;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+
+    background-color:seagreen;
+    color: white;
+    text-align: center;
+    font-size: .8em;
+}
+
+
 .list-group-item {
   position: relative;
   display: block;
@@ -5252,6 +5284,7 @@ a.thumbnail.active {
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd;
+  color:indianred;
 }
 .list-group-item:first-child {
   border-top-left-radius: 4px;

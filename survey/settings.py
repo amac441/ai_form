@@ -146,10 +146,15 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'survey',
     'widget_tweaks',
-    'crispy_forms',
+    # 'djangoChat',
+    # 'crispy_forms',
+    # 'threadedcomments',
+    # 'django_comments',
+    # 'django.contrib.sites',
 )
 
 support_email = "survey@coliving.org"
+# COMMENTS_APP = 'threadedcomments'
 
 
 # A sample logging configuration. The only tangible logging

@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import models
-from survey.models import Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, \
+from survey.models import Comment, Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, \
     AnswerSelectMultiple
 from django.utils.safestring import mark_safe
 import uuid
@@ -43,7 +43,10 @@ class ResponseForm(models.ModelForm):
                     newq.append(ques[0])
                 question_choices=", ".join(newq)
                 qc=question_choices.split("\r\n\r\nExample:",1)
-                example="Example:"+qc[1]
+                try:
+                    example="Example:"+qc[1]
+                except:
+                    example=''
                 self.fields["question_%d" % q.pk] = forms.CharField(label=q.text,
                                                                     help_text=qc[0],
                                                                     widget=forms.Textarea(attrs={'placeholder': example}))
@@ -134,3 +137,9 @@ class ResponseForm(models.ModelForm):
                 a.response = response
                 a.save()
         return response
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('response','author', 'text')

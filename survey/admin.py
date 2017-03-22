@@ -1,4 +1,4 @@
-from survey.models import Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, AnswerSelectMultiple
+from survey.models import Comment,Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, AnswerSelectMultiple
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -36,7 +36,7 @@ class AnswerIntegerInline(AnswerBaseInline):
 	model= AnswerInteger 
 
 class ResponseAdmin(admin.ModelAdmin):
-	list_display = ('interview_uuid', 'title', 'created')
+	list_display = ('id','author', 'title', 'created')
 	inlines = [AnswerTextInline, AnswerRadioInline, AnswerSelectInline, AnswerSelectMultipleInline, AnswerIntegerInline]
 	# specifies the order as well as which fields to act on 
 	readonly_fields = ('survey', 'created', 'updated', 'interview_uuid')
@@ -46,3 +46,4 @@ class ResponseAdmin(admin.ModelAdmin):
 admin.site.register(Survey, SurveyAdmin)
 
 admin.site.register(Response, ResponseAdmin)
+admin.site.register(Comment)

@@ -16,7 +16,7 @@ urlpatterns = patterns('',
 
                 url(r'^confirm/(?P<uuid>\w+)/$', 'survey.views.Confirm', name='confirmation'),
                 url(r'^privacy/$', 'survey.views.privacy', name='privacy_statement'),
-                url(r'^dashboard/(?P<id>\d+)/$', 'survey.views.dashboard', name='dashboard_detail'),
+                url(r'^dashboard/(?P<id>\w+)/$', 'survey.views.dashboard', name='dashboard_detail'),
                 url(r'^dashboard/$', 'survey.views.dashboard', name='dashboard'),
 
                 url(r'^maps/$', 'survey.views.Maps', name='maps'),
@@ -31,6 +31,7 @@ urlpatterns = patterns('',
                 url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
                 url(r'^post_files/$', 'survey.views.post_files', name='post'),
 
+                # url(r'^chat/', include('djangoChat.urls')),
                 )
 
 # media url hackery. le sigh.
@@ -38,3 +39,7 @@ urlpatterns += patterns('',
                         (r'^%s/(?P<path>.*)$' % media_url, 'django.views.static.serve',
                          {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
                         )
+
+# urlpatterns += patterns('',
+#     url(r'^articles/comments/', include('django_comments.urls')),
+# )

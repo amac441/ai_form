@@ -145,8 +145,9 @@ body {
   list-style: none;
 }
 .chat li {
-  margin-bottom: 10px;
-  padding-bottom: 5px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  padding-top:10px;
   border-bottom: 1px dotted #999999;
 }
 .chat li.left .chat-body {
