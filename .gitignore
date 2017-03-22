@@ -5,3 +5,4 @@ media/data
 *.pyc
 local_settings.py
 venv/*
+survey.db

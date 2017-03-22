@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h3 class="page-header">Welcome, {{ user.username|title }}</h3>
+        <a href="/dashboard"><h3 class="page-header">Welcome, {{ user.username|title }}</h3></a>
         <div class="text-muted small alert alert-warning">
             <i>{{ survey.description|safe }}</i></div>
 
