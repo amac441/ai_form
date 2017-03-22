@@ -8,7 +8,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_ODs0gII.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_dXJ2Vcq.txt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_eV8gwfM.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/survey.db" afterPath="$PROJECT_DIR$/survey - Copy (3).db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/forms.py" afterPath="$PROJECT_DIR$/survey/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/models.py" afterPath="$PROJECT_DIR$/survey/models.py" />
@@ -34,10 +33,10 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="467" column="64" lean-forward="false" selection-start-line="467" selection-start-column="64" selection-end-line="467" selection-end-column="64" />
+            <state relative-caret-position="272">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding>
-                <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
+                <marker date="1490212276427" expanded="false" signature="6447:24612" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,7 +111,6 @@
       <find>ajax</find>
       <find>METHOD</find>
       <find>upload</find>
-      <find>success</find>
       <find>response</find>
       <find>data:</find>
       <find>stored</find>
@@ -121,6 +119,7 @@
       <find>dash</find>
       <find>-info</find>
       <find>send_email</find>
+      <find>success</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Development\web2py\applications\web2canvas</dir>
@@ -705,7 +704,7 @@
         <state relative-caret-position="12699">
           <caret line="747" column="35" lean-forward="false" selection-start-line="747" selection-start-column="26" selection-end-line="747" selection-end-column="35" />
           <folding>
-            <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
+            <marker date="1490212276427" expanded="false" signature="6447:24612" ph="..." />
           </folding>
         </state>
       </provider>
@@ -715,7 +714,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
+            <marker date="1490212276427" expanded="false" signature="6447:24612" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1012,10 +1011,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="467" column="64" lean-forward="false" selection-start-line="467" selection-start-column="64" selection-end-line="467" selection-end-column="64" />
+        <state relative-caret-position="272">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding>
-            <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
+            <marker date="1490212276427" expanded="false" signature="6447:24612" ph="..." />
           </folding>
         </state>
       </provider>
