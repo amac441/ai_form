@@ -8,8 +8,8 @@ import datetime
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from survey.models import Question, Survey, Category, FileUpload,Response,AnswerBase
-from survey.forms import ResponseForm,CommentForm
+from survey.models import Comment, Question, Survey, Category, FileUpload,Response,AnswerBase
+from survey.forms import ResponseForm
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -27,6 +27,40 @@ def decode64(imgstr,num):
     ext = 'png'
     datanew = ContentFile(base64.b64decode(imgstr), name='drawing_%s.%s' % (num,ext)) # You can save this as file istance.
     return datanew
+
+def send_email(subject,msg):
+    # server = smtplib.SMTP('smtp.mail.yahoo.com:587')
+    server = smtplib.SMTP('smtp.gmail.com:587')
+
+    server.ehlo()
+    server.starttls()
+
+    To="team@appliedideas.io"
+    # From="ajkrell@yahoo.com"
+    From='appliedideas.message@gmail.com'
+    # appliedideas.message@gmail.com
+
+    msg = "\r\n".join([
+      # "From: amc441@@aol.com",
+      # "To: andy@appliedideas.io",
+      "Subject: " + subject,
+      "",
+      msg
+      ])
+
+
+    # username = 'amac441@aol.com'
+    # password = 'irishirish'
+
+    # username = 'ajkrell@yahoo.com'
+    # password = 'gogogo123!'
+
+    username='appliedideas.message@gmail.com'
+    password='slow1234'
+
+    server.login(username,password)
+    server.sendmail(From, To, msg)
+    server.quit()
 
 @require_POST
 @csrf_exempt
@@ -119,6 +153,7 @@ def dashboard(request, id=''):
     # print(categories)
     initialdata={}
     responsedata=None
+    file_list_string=None
 
     if request.method == 'POST':
         #form = FileUploadForm(request.POST, request.FILES)
@@ -138,10 +173,13 @@ def dashboard(request, id=''):
             filelist=[]
 
         # survey.filelist=json.dumps(filelist) #survey is model
+
         form = ResponseForm(request.POST, survey=survey)
         if form.is_valid():
             response = form.save(json.dumps(filelist), request.user, id, draft, commit=False)
             #return HttpResponseRedirect("/confirm/%s" % response.interview_uuid)
+            send_email("New Idea - "+request.user.username.title(), "Title: "+ request.POST['title'])
+
             return HttpResponseRedirect('/dashboard/'+drafttext)
     #populate form with initial data
     elif id!='':
@@ -155,6 +193,9 @@ def dashboard(request, id=''):
         else:
             try:
                 response = Response.objects.get(id=int(id))
+                rf=eval(response.filelist)
+                if len(rf)>0:
+                    file_list_string = "<b>Stored Files: </b>"+"|| ".join(rf)
                 if request.user==response.author:
 
                     initialdata['title']=response.title
@@ -165,11 +206,12 @@ def dashboard(request, id=''):
                         key="question_"+str(i)
                         qtext=an.question.text
                         initialdata[key]=an.answertext.body
-                        responsedata="<strong>Note:</strong> You are in edit mode"
+                        responsedata="<strong>Note:</strong> You are in edit mode for: <b>" + response.title + "</b>"
             except:
                 pass
     # print(form)
 
+    request.session['images']=[]
     form = ResponseForm(initialdata,survey=survey)
     form.fields['filelist'].widget = forms.HiddenInput()
     rlist=Response.objects.filter(author_id=request.user)
@@ -177,7 +219,11 @@ def dashboard(request, id=''):
     # return render_to_response('object_list_template.html', {'object_list': object_list})
 
     # TODO sort by category
-    return render(request, 'dashboard.html', {'response_form': form, 'survey': survey, 'categories': categories,'data':rlist,'success':responsedata})
+    return render(request, 'dashboard.html', {'response_form': form, 'survey': survey, 'categories': categories,'data':rlist,'success':responsedata,'storedfiles':file_list_string})
+
+import smtplib
+# subject='test'
+
 
 @csrf_exempt
 def store_chat(request):
@@ -186,11 +232,29 @@ def store_chat(request):
     Saves the note content and position within the table.
     """
     # place = get_object_or_404(Space, url=space_name)
-    note_form = CommentForm(request.POST or None)
+    # note_form = CommentForm(request.POST or None)
 
     if request.method == "POST" and request.is_ajax:
+        comment = Comment()
         msg = request.POST['text']
-        print (request.POST)
+        id = request.POST['id']
+        id = id.strip("/").split('/')
+        # if len(id)>1:
+        #     # print (id[1])
+        #     id = int(id[1])
+        # else:
+        #     id = int(request.POST['initial'])
+        id = int(request.POST['initial'])
+        user = request.user
+
+        comment.response=Response.objects.get(id=id)
+        comment.text=msg
+        comment.author=user
+        comment.save()
+
+        send_email("New Chat From - "+user.username, msg)
+        # msg = "Worked!"
+        # print (request.POST)
 
     else:
         msg = "GET petitions are not allowed for this view."

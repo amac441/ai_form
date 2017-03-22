@@ -95,10 +95,18 @@ class ResponseForm(models.ModelForm):
 
     def save(self, files,user,id,draft,commit=True):
         # save the response object
-        if id!='':
-            Response.objects.filter(id=id).delete()
+
         response = super(ResponseForm, self).save(commit=False)
         response.survey = self.survey
+
+        if id.isdigit():
+            try:
+                id=int(id)
+                Response(id=id).delete()
+                response.id=id
+            except:
+                pass
+
         response.interview_uuid = self.uuid
         response.filelist = files
         response.author = user

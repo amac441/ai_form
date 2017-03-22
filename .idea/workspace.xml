@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b2b7ee-d06a-4208-be4b-fa4e2f3c70a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/django-survey-master.iml" afterPath="$PROJECT_DIR$/.idea/django-survey-master.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/readZipData.R" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_-_Copy_CFzOa4J.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_-_Copy_FFILHyb.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_ODs0gII.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_dXJ2Vcq.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/Data_Files/requirements_eV8gwfM.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/survey.db" afterPath="$PROJECT_DIR$/survey - Copy (3).db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/urls.py" afterPath="$PROJECT_DIR$/survey/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/forms.py" afterPath="$PROJECT_DIR$/survey/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/models.py" afterPath="$PROJECT_DIR$/survey/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/survey/views.py" afterPath="$PROJECT_DIR$/survey/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboard.html" />
     </list>
@@ -18,145 +23,63 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/django-survey-master$manage.coverage" NAME="manage Coverage Results" MODIFIED="1490193453933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/django-survey-master$manage.coverage" NAME="manage Coverage Results" MODIFIED="1490197844742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="269">
-                  <caret line="662" column="31" lean-forward="true" selection-start-line="662" selection-start-column="31" selection-end-line="662" selection-end-column="31" />
-                  <folding>
-                    <marker date="1490193243478" expanded="false" signature="6110:24275" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sb-admin-2.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/media/dashboard/dist/css/sb-admin-2.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2516">
-                  <caret line="148" column="19" lean-forward="false" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/media/dashboard/vendor/bootstrap/css/bootstrap.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="89369">
-                  <caret line="5257" column="35" lean-forward="false" selection-start-line="5257" selection-start-column="35" selection-end-line="5257" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/base.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8687">
-                  <caret line="527" column="0" lean-forward="false" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/survey/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="131">
-                  <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/survey/forms.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="384">
-                  <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="response.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/response.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/survey/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#35#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/survey/admin.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#0#146#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/survey/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="403">
-                  <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#0#28#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="878" column="59" lean-forward="false" selection-start-line="878" selection-start-column="59" selection-end-line="878" selection-end-column="59" />
-                  <folding>
-                    <marker date="1490193243478" expanded="false" signature="6110:24275" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="467" column="64" lean-forward="false" selection-start-line="467" selection-start-column="64" selection-end-line="467" selection-end-column="64" />
+              <folding>
+                <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/survey/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3043">
+              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/survey/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="82" column="76" lean-forward="true" selection-start-line="82" selection-start-column="76" selection-end-line="82" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/survey/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1785">
+              <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -168,18 +91,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/dash</find>
-      <find>button</find>
-      <find>btn-danger</find>
-      <find>contect</find>
-      <find>helper</find>
-      <find>name=</find>
-      <find>bombs</find>
-      <find>.list-group-item</find>
-      <find>min.css</find>
       <find>.dz-message</find>
       <find>.z</find>
-      <find>upload</find>
       <find>fa-uplo</find>
       <find>dropzone</find>
       <find>placeholder</find>
@@ -198,6 +111,16 @@
       <find>stats -</find>
       <find>ajax</find>
       <find>METHOD</find>
+      <find>upload</find>
+      <find>success</find>
+      <find>response</find>
+      <find>data:</find>
+      <find>stored</find>
+      <find>info</find>
+      <find>in edit mode</find>
+      <find>dash</find>
+      <find>-info</find>
+      <find>send_email</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Development\web2py\applications\web2canvas</dir>
@@ -225,13 +148,13 @@
         <option value="$PROJECT_DIR$/djangoChat/models.py" />
         <option value="$PROJECT_DIR$/survey/admin.py" />
         <option value="$PROJECT_DIR$/survey/settings.py" />
-        <option value="$PROJECT_DIR$/survey/models.py" />
         <option value="$PROJECT_DIR$/media/dashboard/vendor/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/media/dashboard/dist/css/sb-admin-2.css" />
-        <option value="$PROJECT_DIR$/survey/forms.py" />
         <option value="$PROJECT_DIR$/survey/urls.py" />
-        <option value="$PROJECT_DIR$/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/survey/forms.py" />
         <option value="$PROJECT_DIR$/survey/views.py" />
+        <option value="$PROJECT_DIR$/survey/models.py" />
+        <option value="$PROJECT_DIR$/templates/dashboard.html" />
       </list>
     </option>
   </component>
@@ -262,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,7 +228,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -315,7 +238,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -602,26 +525,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2570694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26028278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35843793" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29288703" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35843793" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -660,7 +583,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>80</line>
+          <line>114</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -675,17 +598,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>77</line>
+          <line>111</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>76</line>
+          <line>110</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>73</line>
+          <line>107</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -695,28 +618,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>156</line>
-          <option name="timeStamp" value="116" />
+          <line>228</line>
+          <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>157</line>
-          <option name="timeStamp" value="127" />
+          <line>256</line>
+          <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>190</line>
-          <option name="timeStamp" value="137" />
+          <line>249</line>
+          <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="138" />
+          <line>254</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/survey/views.py</url>
-          <line>188</line>
-          <option name="timeStamp" value="139" />
+          <line>180</line>
+          <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="jinja2-line">
           <url>file://$PROJECT_DIR$/templates/dashboard.html</url>
@@ -724,7 +647,7 @@
           <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="140" />
+      <option name="time" value="164" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -759,13 +682,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9588">
-          <caret line="564" column="16" lean-forward="false" selection-start-line="564" selection-start-column="1" selection-end-line="564" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/css/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -788,7 +705,7 @@
         <state relative-caret-position="12699">
           <caret line="747" column="35" lean-forward="false" selection-start-line="747" selection-start-column="26" selection-end-line="747" selection-end-column="35" />
           <folding>
-            <marker date="1490193243478" expanded="false" signature="6110:24275" ph="..." />
+            <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
           </folding>
         </state>
       </provider>
@@ -798,7 +715,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1490193243478" expanded="false" signature="6110:24275" ph="..." />
+            <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
           </folding>
         </state>
       </provider>
@@ -915,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="178" column="16" lean-forward="false" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="211" column="8" lean-forward="false" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,9 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#146#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1035,58 +947,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8687">
-          <caret line="527" column="0" lean-forward="false" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="545" column="1" lean-forward="false" selection-start-line="545" selection-start-column="1" selection-end-line="545" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/dashboard/vendor/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89369">
-          <caret line="5257" column="35" lean-forward="false" selection-start-line="5257" selection-start-column="35" selection-end-line="5257" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/css/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/media/dashboard/dist/css/sb-admin-2.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2516">
           <caret line="148" column="19" lean-forward="false" selection-start-line="148" selection-start-column="19" selection-end-line="148" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/survey/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/survey/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,22 +966,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="662" column="31" lean-forward="true" selection-start-line="662" selection-start-column="31" selection-end-line="662" selection-end-column="31" />
+        <state relative-caret-position="17">
+          <caret line="527" column="0" lean-forward="false" selection-start-line="527" selection-start-column="0" selection-end-line="527" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/dashboard/vendor/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5257" column="35" lean-forward="false" selection-start-line="5257" selection-start-column="35" selection-end-line="5257" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
           <folding>
-            <marker date="1490193243478" expanded="false" signature="6110:24275" ph="..." />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/survey/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        <state relative-caret-position="-3043">
+          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="82" column="76" lean-forward="true" selection-start-line="82" selection-start-column="76" selection-end-line="82" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="467" column="64" lean-forward="false" selection-start-line="467" selection-start-column="64" selection-end-line="467" selection-end-column="64" />
+          <folding>
+            <marker date="1490207559033" expanded="false" signature="6380:24545" ph="..." />
           </folding>
         </state>
       </provider>

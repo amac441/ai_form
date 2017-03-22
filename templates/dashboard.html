@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h3 class="page-header">Welcome, {{ user.username|title }}</h3>
-        <div class="text-muted small alert alert-info">
+        <div class="text-muted small alert alert-warning">
             <i>{{ survey.description|safe }}</i></div>
 
         {% if success %}
@@ -118,6 +118,15 @@
 
                     </div>
                     <div class="panel-body">
+
+                        {% if storedfiles %}
+
+                                    <div class="alert alert-info">
+                                        <p> {{ storedfiles|safe }} </p>
+                                    </div>
+
+                        {% endif %}
+
                             <div id="dZUpload" class="dropzone dz-clickable">
 
                                 <div class="dz-default dz-message "><div class="fa fa-upload fa-2x"></div></div>
@@ -456,7 +465,7 @@
                             <i class="fa fa-copy fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{ data.count }}</div>
+                            <div class="huge">{{ data.count|add:"-1" }}</div>
                             <div>Your Submissions</div>
                         </div>
                     </div>
@@ -530,11 +539,11 @@
 {#        https://djangogirls.gitbooks.io/django-girls-tutorial-extensions/homework_create_more_models/#}
             <div class="chat-panel panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-comments fa-fw"></i> Chat - Coming Soon
+                    <i class="fa fa-comments fa-fw"></i> Messages
                                         <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-chevron-down"></i>
-                        </button>
+{#                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">#}
+{#                            <i class="fa fa-chevron-down"></i>#}
+{#                        </button>#}
 {#                        <ul class="dropdown-menu slidedown">#}
 {#                            <li>#}
 {#                                <a href="#">#}
@@ -868,11 +877,19 @@
         var frm = $('#chat-form');
 
         frm.submit(function () {
-            var d = frm.serialize();
+            var id = "{{ request.path }}";
+            var init = "{{ data.0.id }}"
+            var val = $("#comment_text").val();
+            var d = frm.serialize()
             $.ajax({
                 type: frm.attr('method'),
                 url: frm.attr('action'),
-                data: d,
+                data:
+                    {
+                    text:val,
+                    id:id,
+                    initial:init
+                },
                 success: function (data) {
                     var ht = "<b>New: </b>";
                     var div = $("#new-chat");
@@ -880,7 +897,7 @@
                     frm[0].reset();
                 },
                 error: function (data) {
-                    $("#new-chat").html("Something went with chat. Email us!");
+                    $("#new-chat").html("Something went wrong with chat. Email us!");
                 }
             });
             return false;

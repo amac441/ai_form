@@ -84,7 +84,7 @@ class Response(models.Model):
     # unique interview uuid
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    survey = models.ForeignKey(Survey)
+    survey = models.ForeignKey(Survey, null=True)
     title = models.CharField('Idea Name', max_length=400, blank=True, null=True)
     # interviewee = models.CharField('Name of Interviewee', max_length=400, blank=True, null=True)
     # conditions = models.TextField('Conditions during interview', blank=True, null=True)
