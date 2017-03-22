@@ -30,6 +30,7 @@ urlpatterns = patterns('',
                 url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
                 url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
                 url(r'^post_files/$', 'survey.views.post_files', name='post'),
+                url(r'^store_chat/$', 'survey.views.store_chat', name='chat'),
 
                 # url(r'^chat/', include('djangoChat.urls')),
                 )

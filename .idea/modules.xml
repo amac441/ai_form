@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/django-survey-master.iml" filepath="$PROJECT_DIR$/.idea/django-survey-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../web2py/applications/web2canvas/.idea/web2canvas.iml" filepath="$PROJECT_DIR$/../web2py/applications/web2canvas/.idea/web2canvas.iml" />
     </modules>
   </component>
 </project>

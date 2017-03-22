@@ -179,7 +179,8 @@ def dashboard(request, id=''):
     # TODO sort by category
     return render(request, 'dashboard.html', {'response_form': form, 'survey': survey, 'categories': categories,'data':rlist,'success':responsedata})
 
-def save_note(request, space_name):
+@csrf_exempt
+def store_chat(request):
 
     """
     Saves the note content and position within the table.
@@ -188,8 +189,8 @@ def save_note(request, space_name):
     note_form = CommentForm(request.POST or None)
 
     if request.method == "POST" and request.is_ajax:
-        msg = "The operation has been received correctly."
-        print request.POST
+        msg = request.POST['text']
+        print (request.POST)
 
     else:
         msg = "GET petitions are not allowed for this view."

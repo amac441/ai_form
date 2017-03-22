@@ -4,24 +4,23 @@
 {% block body %}
 
 
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header">Welcome, {{ user.username|title }}</h3>
+        <div class="text-muted small alert alert-info">
+            <i>{{ survey.description|safe }}</i></div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h3 class="page-header">Welcome, {{ user.username|title }}</h3>
-            <div class="text-muted small alert alert-info">
-                <i>{{ survey.description|safe }}</i></div>
-
-            {% if success %}
-                <div class="alert alert-danger">
-                    {{ success|safe }}
-                </div>
-            {% endif %}
-        </div>
-        <!-- /.col-lg-12 -->
+        {% if success %}
+            <div class="alert alert-danger">
+                {{ success|safe }}
+            </div>
+        {% endif %}
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 
-    <span class="row">
+<span class="row">
         <div class="col-lg-8">
 {#            http://stackoverflow.com/questions/20727029/django-dropzone-js-form-validation-fails-for-multiple-files   #}
             <form class="form" action="{{ request.path }}" method="post" enctype="multipart/form-data">
@@ -129,15 +128,15 @@
                 <!-- /.upload -->
 
             <div class="btn-toolbar btn-block" role="toolbar" aria-label="Toolbar with button groups">
-  <div class="btn-group mr-2 btn-block" role="group" aria-label="First group">
-                <input type="submit" name="draft" class="submit-all btn btn-block btn-default" value="Save Draft">
+              <div class="btn-group mr-2 btn-block" role="group" aria-label="First group">
+                            <input type="submit" name="draft" class="submit-all btn btn-block btn-default" value="Save Draft">
 
-  </div>
-  <div class="btn-group mr-2 btn-block" role="group" aria-label="Second group">
-                <input type="submit" name="save" class="submit-all btn btn-block btn-danger" value="Bombs Away!">
-  </div>
+              </div>
+              <div class="btn-group mr-2 btn-block" role="group" aria-label="Second group">
+                            <input type="submit" name="save" class="submit-all btn btn-block btn-danger" value="Bombs Away!">
+              </div>
 
-</div>
+            </div>
 
 <div class="lead"></div>
 
@@ -444,7 +443,7 @@
     {#        <!-- /.List Panel -->#}
 
         </div>
-        <!-- /.col-lg-8 -->
+    <!-- /.col-lg-8 -->
 
 
         <div class="col-lg-4">
@@ -590,7 +589,7 @@
                         {% ifequal comment.author user %}
                         <li class="left clearfix">
                                         <span class="chat-img pull-left">
-                                            <span class="red-circle">{{comment.response.title}}</span>
+                                            <span class="red-circle">{{ comment.response.title }}</span>
                                         </span>
                             <div class="chat-body clearfix">
                                 <div class="header">
@@ -609,7 +608,7 @@
                         {% else %}
                         <li class="right clearfix">
                                         <span class="chat-img pull-right">
-                                            <div class="blue-circle">{{comment.response.title}}</div>
+                                            <div class="blue-circle">{{ comment.response.title }}</div>
                                         </span>
                             <div class="chat-body clearfix">
                                 <div class="header">
@@ -623,24 +622,47 @@
                                 </p>
                             </div>
                         </li>
-                    {%  endifequal %}
+                    {% endifequal %}
 
                     {% endfor %}
 
                     {% endfor %}
+
+
+                          <!--<li class="left clearfix">-->
+                                        <!--<span class="chat-img pull-left">-->
+                                            <!--<span class="red-circle">{{ comment.response.title }}</span>-->
+                                        <!--</span>-->
+                            <!--<div class="chat-body clearfix">-->
+                                <!--<div class="header">-->
+                                    <!--<strong class="primary-font">{{ comment.author }}</strong>-->
+                                    <!--<small class="pull-right text-muted">-->
+                                        <!--<i class="fa fa-clock-o fa-fw"></i> {{ comment.created_date|date:"M d" }}-->
+                                    <!--</small>-->
+                                <!--</div>-->
+                                <p id="new-chat">
+
+                                </p>
+                            <!--</div>-->
+                        <!--</li>-->
+                      <!---->
+
+
                     </ol>
                 </div>
                 <!-- /.panel-body -->
                 <div class="panel-footer">
+                    <form class="chat-form" id="chat-form" action="/store_chat/" method="post">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-sm"
-                               placeholder="Type your message here..."/>
+                        <input id="comment_text" rows='2' type="text" class="form-control input-sm"
+                               name="text" placeholder="Type your message here..."/>
                         <span class="input-group-btn">
-                                        <button class="btn btn-warning btn-sm" id="btn-chat">
-                                            Send
-                                        </button>
-                                    </span>
+                        <button type="submit" value="chat" class="btn btn-warning btn-sm" id="btn-chat">
+                            Send
+                        </button>
+                        </span>
                     </div>
+                        </form>
                 </div>
                 <!-- /.panel-footer -->
             </div>
@@ -663,9 +685,9 @@
 
             {#                    https://github.com/emencia/emencia-django-forum#}
         </div>
-        <!-- /.col-lg-4 -->
+    <!-- /.col-lg-4 -->
     </span>
-    <!-- /.row -->
+<!-- /.row -->
 
 
 {% endblock %}
@@ -837,5 +859,33 @@
         {#    $(this).parent().find(".fa-arrow-circle-down").removeClass("fa-arrow-circle-down").addClass("fa-arrow-circle-right");#}
         {#    });#}
     </script>
+
+
+        <script type = "text/javascript" >
+
+        var html=""
+
+        var frm = $('#chat-form');
+
+        frm.submit(function () {
+            var d = frm.serialize();
+            $.ajax({
+                type: frm.attr('method'),
+                url: frm.attr('action'),
+                data: d,
+                success: function (data) {
+                    var ht = "<b>New: </b>";
+                    var div = $("#new-chat");
+                    div.html(div.html() + ht + data + '<br>');
+                    frm[0].reset();
+                },
+                error: function (data) {
+                    $("#new-chat").html("Something went with chat. Email us!");
+                }
+            });
+            return false;
+        });
+    </script>
+
 
 {% endblock %}
