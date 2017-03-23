@@ -2,13 +2,18 @@
 
 import os
 
-LOCAL = False
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # Make filepaths relative to settings.
 ROOT = os.path.dirname(os.path.abspath(__file__))
 path = lambda *a: os.path.join(ROOT, *a)
+
+if "Development" in ROOT:
+	LOCAL = True
+else:
+	LOCAL = False
 
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
@@ -21,7 +26,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
+	
 if LOCAL==True:
     DATABASES = {
         'default': {
