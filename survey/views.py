@@ -76,7 +76,7 @@ def post_files(request):
             num=1
         file=decode64(request.POST['image'],str(num))
 
-    newdoc = FileUpload(docFile = file)
+    newdoc = FileUpload(docFile = file, author=request.user)
     newdoc.save();
 
     try:
