@@ -142,7 +142,7 @@ class FileUpload(models.Model):
     def filename(self):
         return os.path.basename(self.docFile.name)
 
-     def __str__(self):
+    def __str__(self):
        return os.path.basename(self.docFile.name) + " - " + self.author.username
 
 class Comment(models.Model):
