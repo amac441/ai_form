@@ -140,7 +140,10 @@ class FileUpload(models.Model):
 
     @property
     def filename(self):
-        return os.path.basename(self.docFile.name) + " - " + self.author.username
+        return os.path.basename(self.docFile.name)
+
+     def __str__(self):
+       return os.path.basename(self.docFile.name) + " - " + self.author.username
 
 class Comment(models.Model):
     response = models.ForeignKey(Response, related_name="comments")
