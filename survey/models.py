@@ -136,11 +136,11 @@ class AnswerInteger(AnswerBase):
 
 class FileUpload(models.Model):
     docFile = models.FileField(upload_to='Data_Files', blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE,blank=True, null=True)
+    #author = models.ForeignKey(User, on_delete=models.CASCADE,blank=True, null=True)
 
     @property
     def filename(self):
-        return os.path.basename(self.docFile.name) + " - " + self.author.username
+        return os.path.basename(self.docFile.name)# + " - " + self.author.username
 
 class Comment(models.Model):
     response = models.ForeignKey(Response, related_name="comments")
