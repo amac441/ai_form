@@ -2,7 +2,7 @@
 
 import os
 
-LOCAL = True
+LOCAL = False
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -40,7 +40,7 @@ else:
             'NAME': 'andyai$survey',                      # Or path to database file if using sqlite3.
             'USER': 'andyai',                      # Not used with sqlite3.
             'PASSWORD': 'gogogo123',                  # Not used with sqlite3.
-            'HOST': 'andyai.mysql.pythonanywhere-services.com'                      # Set to empty string for localhost. Not used with sqlite3.
+            'HOST': 'andyai.mysql.pythonanywhere-services.com'          
         }
     }
 
