@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/survey/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
-              <caret line="196" column="96" lean-forward="true" selection-start-line="196" selection-start-column="96" selection-end-line="196" selection-end-column="96" />
+              <caret line="196" column="113" lean-forward="false" selection-start-line="196" selection-start-column="113" selection-end-line="196" selection-end-column="113" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -999,7 +999,7 @@
     <entry file="file://$PROJECT_DIR$/survey/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="196" column="96" lean-forward="true" selection-start-line="196" selection-start-column="96" selection-end-line="196" selection-end-column="96" />
+          <caret line="196" column="113" lean-forward="false" selection-start-line="196" selection-start-column="113" selection-end-line="196" selection-end-column="113" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
