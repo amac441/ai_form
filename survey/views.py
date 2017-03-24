@@ -194,7 +194,7 @@ def dashboard(request, id=''):
             #         d
 
 
-            send_email("New Idea - "+request.user.username.title(), msg)
+            send_email("New Idea - "+request.user.username.title(), msg.encode('utf-8').strip())
 
             return HttpResponseRedirect('/dashboard/'+drafttext)
     #populate form with initial data
