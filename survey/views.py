@@ -178,7 +178,23 @@ def dashboard(request, id=''):
         if form.is_valid():
             response = form.save(json.dumps(filelist), request.user, id, draft, commit=False)
             #return HttpResponseRedirect("/confirm/%s" % response.interview_uuid)
-            send_email("New Idea - "+request.user.username.title(), "Title: "+ request.POST['title'])
+            msg = "Title: "+ request.POST['title']
+            msgdata={}
+            qs=survey.questions()
+            # qs[0].text
+            for k in sorted(request.POST):
+                if "question" in k:
+                    ider = int(k.split("_")[1])-1
+                    msg += "\n\n"+ qs[ider].text.replace('\n','').replace('\r','') + ": "+request.POST[k]
+
+            msg+="\n\nFiles: "+str(filelist)
+            #list.append(request.POST.copy())
+            # for k in ks:
+            #     if 'question' in k:
+            #         d
+
+
+            send_email("New Idea - "+request.user.username.title(), msg)
 
             return HttpResponseRedirect('/dashboard/'+drafttext)
     #populate form with initial data
