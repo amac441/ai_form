@@ -4621,6 +4621,7 @@ ul.comments-list > li.comment > .comment-body {
   .slider p,
   .slider .layer {
     text-align: center;
+    margin-left: -25px;
   }
 }
 /**
@@ -4843,7 +4844,7 @@ ul.comments-list > li.comment > .comment-body {
 }*/
 @media screen and (max-width: 767px) {
   #about {
-    padding: 100px 0 !important;
+    /*padding: 100px 0 !important;*/
   }
   .home-personal #about {
     background-image: none;
