@@ -1,11 +1,22 @@
 from django import forms
 from django.forms import models
-from survey.models import Comment, Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, \
+from survey.models import Blockwise, Comment, Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, \
     AnswerSelectMultiple
 from django.utils.safestring import mark_safe
 import uuid
 
-# blatantly stolen from
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Blockwise
+        # exclude = ['author', 'updated', 'created', ]
+        fields = ['email']
+        widgets = {
+            'email': forms.TextInput(
+                attrs={'id': 'post-text', 'required': True, 'placeholder': 'Email here...'}
+            ),
+        }
+
+# stolen from
 # http://stackoverflow.com/questions/5935546/align-radio-buttons-horizontally-in-django-forms?rq=1
 class HorizontalRadioRenderer(forms.RadioSelect.renderer):
     def render(self):

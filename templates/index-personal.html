@@ -1,0 +1,307 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<!--
+HTML tag with Open Graph attributes should looks like this
+<html class="no-js" lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+-->
+<head>
+	<meta charset="UTF-8" />
+	<title>Blockwise</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Open Graph meta tags for social websites -->
+	<!--
+	<meta property="og:title" content="About Our Company">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://www.mysite.com/article/">
+	<meta property="og:image" content="http://www.mysite.com/articleimage.jpg">
+	<meta property="og:site_name" content="My Company Name">
+	<meta property="fb:app_id" content="">
+	<meta property="og:description" content="A description of our services and company profile.">
+-->
+
+<!-- CSS Animation libs styles -->
+<link rel="stylesheet" href="/media/blockwise/css/libs/animate.min.css" type="text/css" media="all">
+<!-- Font Awesome icon library -->
+<link href="/media/blockwise/css/libs/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+<!-- Load primary stylesheet -->
+<link rel="stylesheet" href="/media/blockwise/css/skin.css" type="text/css" media="all">
+
+<link rel="shortcut icon" type="image/png" href="/media/blockwise//blockwise_icon2.png"/>
+<link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
+
+</head>
+<body class="home home-personal one-page preloader transparent-header parallax-footer">
+
+	<!--
+	Page preloader
+-->
+<div id="preloader">
+	<div class="timer"></div>
+</div>
+
+<!--
+Main wrapper
+-->
+<div id="wrap">
+
+	<!--
+	Page header
+-->
+<header class="headroom" id="header">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<!--
+				Theme logo
+			-->
+			<a href="/media/blockwise/index-agency.html" class="logo"><img src="/media/blockwise/images/blockwise_sm.png" data-at2x="/media/blockwise/images/blockwise_white_cropped.png" alt="Unicum - Premium HTML template" /></a>
+
+			<!--
+			Navigation
+		-->
+		<nav id="header-nav" class="dl-menuwrapper" data-back-label="Back">
+
+			<!--
+			Toggle menu for mobile devices
+			this element is hidden for desktop and large monitors
+		-->
+		<a href="javascript:;" id="mobile-menu-toggler" class="dl-trigger"><span>Toggle Menu</span></a>
+
+		<ul id="header-menu" class="dl-menu">
+			<!--
+			First level menu
+		-->
+		<li>
+			<a href="#home">
+				<!-- Animated line wrap additional tags -->
+				<span class="line_wrap">
+					<span class="line"></span>
+					Home
+				</span>
+			</a>
+		</li>
+
+		<li>
+			<a href="#contact" rel="relativeanchor">
+				<span class="line_wrap">
+					<span class="line"></span>
+					Contact
+					<!-- <i class="submenu-icon"></i> -->
+				</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+</header>
+
+<!--
+Content section area
+-->
+<div id="content-wrapper">
+
+	<!--
+	Home page slider
+-->
+<div id="slider" class="section slider">
+	<!--
+	Slides
+-->
+<ul class="seq-canvas">
+	<li style="background-image: url(media/blockwise/images/landing/brownstone1.jpg)">
+
+		<!-- slide layers -->
+
+		<div class="layer">
+			<h1>Better Blocks.<br />Stronger Communities.</h1>
+			<p>Blockwise helps local leaders collaborate with, engage, and improve their communities.</p>
+			<a href="#about" rel="relativeanchor"><div class="button yellow">About Us</div></a>
+		</div>
+
+	</li>
+</ul>
+
+<!--
+Skip slider
+-->
+<a href="javascript:;" class="skip-slider"></a>
+
+</div>
+
+<!--
+Services section
+-->
+<div class="section" id="about">
+
+	<div class="services">
+
+		<div id="services-tab-id-1" class="service-item selected">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-6">
+
+						<div class="tab-content">
+
+							<h2 class="h1 wow zoomInDown">About Blockwise</h2>
+
+							<h6>Improve the value of your home, the safety of your street, and your quality of life.</h6>
+
+							<p>Instead of being a ‘social media’ platform like Facebook or NextDoor, which are geared toward generating clicks and selling adds, Blockwise is a ‘social action’ platform, designed to help promote and encourage collaborative projects, events, and improvement between a group of passionate neighbors.</p>
+
+							<a href="#contact" rel="relativeanchor" class="button orange inverted wow wobble" data-wow-delay="0.5s">Request Info</a>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+	<!-- Web Design -->
+	<!-- <div id="services-tab-id-2" class="service-item">
+
+	<!--
+	Tab content
+
+</div>
+
+<!--
+Tabs pagination
+-->
+
+
+<!--
+Footer
+-->
+<footer id="footer">
+
+	<div id="footer-widgets" class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+
+				<a href="" class="footer-logo"><img src="/media/blockwise/images/blockwise.png" data-at2x="/media/blockwise/images/blockwise.png" alt="Unicum - creative agency template" /></a>
+
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+
+			</div>
+		</div>
+		<!-- <div id="contact"></div> -->
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+
+				<form class="subscribe-form" action="" method="post" id="post-form">
+					{% csrf_token %}
+					<div class="fieldWrapper" id="the_post">
+					{{ form.email }}
+
+					<input type="submit" value="Post"  />
+					</div>
+				</form>
+
+				<!-- <form method="POST" id="post-form">
+    {% csrf_token %}
+    <div class="fieldWrapper" id="the_post">
+        {{ form.email }}
+    </div>
+    <div id="results"></div>
+    <input type="submit" value="Post" class="tiny button">
+</form> -->
+
+				<!-- <div class="social-icons">
+					<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+					<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+					<a href="http://pinterest.com" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+				</div> -->
+
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<p>&copy;2017 Applied Ideas LLC and <a href="">Blockwise</a></p>
+					<p>Designed by <a href="http://appliedideas.io">Applied Ideas</a></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<span id='contact'></span>
+</footer>
+
+</div>
+
+<!--
+Theme's JavaScript
+It is located at the bottom of the page to increase site's loading speed
+-->
+<!-- JQuery can be loaded from CDN, change SRC attribute into "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" -->
+
+
+
+<script src="/media/blockwise/js/libs/jquery.min.js"></script>
+<!--
+Here we load all JS libs, packed into one single file to increase loading speed
+in case you need to load libraries one-by one or you need to remove one of them,
+see /js/libs/directory/, it contains all JS libs, used by theme
+-->
+
+<script>
+
+$(document).ready(function() {
+	$('a[rel="relativeanchor"]').click(function(){
+	    $('html, body').animate({
+	        scrollTop: $( $.attr(this, 'href') ).offset().top
+	    }, 1000);
+	    return false;
+	});
+});
+
+// AJAX for posting
+$('#post-form').submit(function(e) {
+	  e.preventDefault();
+    console.log("create post is working!") // sanity check
+    $.ajax({
+        url : "blockwise_post/", // the endpoint
+        type : "POST", // h ttp method
+        data : { the_post : $('#post-text').val() }, // data sent with the post request
+
+        // handle a successful response
+        success : function(json) {
+            $('#post-text').val(''); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            console.log("success"); // another sanity check
+        },
+
+        // handle a non-successful response
+        error : function(xhr,errmsg,err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
+    });
+
+});
+
+
+</script>
+
+<script src="/media/blockwise/js/all_in_one_libs.min.js"></script>
+<script src="/media/blockwise/js/libs/jquery.dlmenu.js"></script>
+<script src="/media/blockwise/js/front.js"></script>
+
+
+</body>
+</html>

@@ -10,7 +10,10 @@ media_url = settings.MEDIA_URL.lstrip('/').rstrip('/')
 
 urlpatterns = patterns('',
                 # Examples:
-                url(r'^$', 'survey.views.Index', name='home'),
+                url(r'^$', 'survey.views.blockwise', name='home'),
+                url(r'^blockwise_post/$', 'survey.views.create_post', name='create_post'),
+                url(r'^main/$', 'survey.views.main', name='main'),
+
                 url(r'^survey/(?P<id>\d+)/$', 'survey.views.SurveyDetail', name='survey_detail'),
                 url(r'^response/(?P<id>\d+)/$', 'survey.views.ResponseDetail', name='response_detail'),
 

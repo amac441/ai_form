@@ -4,6 +4,10 @@ from django.conf import settings
 import os
 from django.contrib.auth.models import User
 
+class Blockwise(models.Model):
+    email=models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+
 class Survey(models.Model):
     name = models.CharField(max_length=400)
     description = models.TextField()

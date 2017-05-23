@@ -6,3 +6,4 @@ media/data
 local_settings.py
 venv/*
 *.db
+env/

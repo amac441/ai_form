@@ -8,8 +8,8 @@ import datetime
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from survey.models import Comment, Question, Survey, Category, FileUpload,Response,AnswerBase
-from survey.forms import ResponseForm
+from survey.models import Blockwise, Comment, Question, Survey, Category, FileUpload,Response,AnswerBase
+from survey.forms import ResponseForm,PostForm
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -20,6 +20,35 @@ from django.core.files.base import ContentFile
 # protect the view with require_POST decorator
 from django.views.decorators.http import require_POST
 from django import forms
+
+
+def create_post(request):
+    if request.method == 'POST':
+        post_text = request.POST.get('the_post')
+        response_data = {}
+
+        post = Blockwise(email=post_text)
+        post.save()
+
+        response_data['result'] = 'Create post successful!'
+        response_data['postpk'] = post.pk
+        response_data['text'] = post.text
+        response_data['created'] = post.created.strftime('%B %d, %Y %I:%M %p')
+        response_data['author'] = post.author.username
+
+        return HttpResponse(
+            json.dumps(response_data),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
+
+def blockwise(request):
+    form = PostForm()
+    return render(request, 'index-personal.html', {'form': form})
 
 def decode64(imgstr,num):
     #http://stackoverflow.com/questions/39576174/save-base64-image-in-django-file-field
@@ -92,9 +121,10 @@ def add_files(request):
     instance = ModelWithFileField(file_field=request.FILES['file'])
     instance.save()
 
-def Index(request):
-    return render(request, 'index.html')
 
+
+def main(request):
+    return render(request, 'main.html')
 
 def Maps(request):
     return render(request, 'maps.html')
