@@ -21,7 +21,7 @@ from django.core.files.base import ContentFile
 from django.views.decorators.http import require_POST
 from django import forms
 
-
+@csrf_exempt
 def create_post(request):
     if request.method == 'POST':
         post_text = request.POST.get('the_post')
@@ -31,10 +31,10 @@ def create_post(request):
         post.save()
 
         response_data['result'] = 'Create post successful!'
-        response_data['postpk'] = post.pk
-        response_data['text'] = post.text
-        response_data['created'] = post.created.strftime('%B %d, %Y %I:%M %p')
-        response_data['author'] = post.author.username
+        # response_data['postpk'] = post.pk
+        # response_data['text'] = post.text
+        # response_data['created'] = post.created.strftime('%B %d, %Y %I:%M %p')
+        # response_data['author'] = post.author.username
 
         return HttpResponse(
             json.dumps(response_data),

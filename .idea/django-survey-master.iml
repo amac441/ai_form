@@ -10,7 +10,7 @@
       <excludeFolder url="file://$MODULE_DIR$/examples" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.5.2 virtualenv at C:\Development\0117-Craigalytics\django-survey-master\venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2 virtualenv at C:\Development\0317-Demos\clone\ai_form\env" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Django Lib" level="project" />
   </component>

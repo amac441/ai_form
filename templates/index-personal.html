@@ -204,6 +204,7 @@ Footer
 
 					<input type="submit" value="Post"  />
 					</div>
+                    <span id="results"></span>
 				</form>
 
 				<!-- <form method="POST" id="post-form">
@@ -280,15 +281,19 @@ $('#post-form').submit(function(e) {
 
         // handle a successful response
         success : function(json) {
-            $('#post-text').val(''); // remove the value from the input
+            $('#post-text').val(''); // remove the value from the input'
+            $('#results').html("<div class='field-wrap'></div><a href='javascript:;' class='button turquoise'>Email Submitted! </a>"); // add the error to the dom
             console.log(json); // log the returned json to the console
             console.log("success"); // another sanity check
         },
 
+{#        <div class="alert alert-warning">#}
+{#  <strong>Warning!</strong> Indicates a warning that might need attention.#}
+{#</div>#}
+
         // handle a non-successful response
         error : function(xhr,errmsg,err) {
-            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
-                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            $('#results').html("<div class='field-wrap'></div><a href='javascript:;' class='button red'>Oops! We have encountered an error</a>"); // add the error to the dom
             console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
         }
     });
