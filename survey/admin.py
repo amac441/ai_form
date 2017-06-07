@@ -1,4 +1,4 @@
-from survey.models import FileUpload,Comment,Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, AnswerInteger, AnswerSelectMultiple
+from survey.models import FileUpload,Comment,Question, Category, Survey, Response, AnswerText, AnswerRadio, AnswerSelect, Blockwise,AnswerInteger, AnswerSelectMultiple
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -48,3 +48,4 @@ admin.site.register(Survey, SurveyAdmin)
 admin.site.register(Response, ResponseAdmin)
 admin.site.register(Comment)
 admin.site.register(FileUpload)
+admin.site.register(Blockwise)
